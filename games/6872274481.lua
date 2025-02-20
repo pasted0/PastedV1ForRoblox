@@ -1,4 +1,4 @@
-print("went to bedwars")
+print("went to bedwars | Check To See If Delta actually looks at the thingy" .. math.random(100))
 local run = function(func)
 	func()
 end
@@ -8541,23 +8541,7 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
   end,
   
   Tooltip = "Makes it so you cant get hit"
---[[
-  AntiHit:CreateSlider({
-    Min = 0.01,
-    Max = 1,
-    Defualt = 0.2,
-    Function = function(val)
-      tpUp = val
-    end
-  }),
-  AntiHit:CreateSlider({
-    Min = 0.01,
-    Max = 1,
-    Default = 0.3,
-    Function = function(val)
-      tpDown = val
-    end
-    })]]--
+
 		
 })
 
