@@ -1,4 +1,4 @@
-print("went to bedwars | Check To See If Delta actually looks at the thingy" .. math.random(100))
+print("went to bedwars | Check To See If Delta actually looks at the thingy " .. math.random(100))
 local run = function(func)
 	func()
 end
@@ -8521,6 +8521,8 @@ local InfiniteJump = vape.Categories.Blatant:CreateModule({
 
 local tpDown = 0.3
 local tpUp = 0.2
+																																																																																																																																																								
+																																																																																																																																																								local speed2
 local AntiHit = vape.Categories.Blatant:CreateModule({
   Name = "AntiHit",
   Function = function(callback)
@@ -8553,7 +8555,7 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
       tpUp = val
     end
   }),
-local speed2
+
   speed2 = AntiHit:CreateSlider({
     Name = "Teleport Down Speed",
     Min = 0.01,
