@@ -8541,7 +8541,7 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
   end,
   
   Tooltip = "Makes it so you cant get hit"
-		--[[
+--[[
   AntiHit:CreateSlider({
     Min = 0.01,
     Max = 1,
