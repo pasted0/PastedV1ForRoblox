@@ -8464,9 +8464,10 @@ local HitSelect = vape.Catagories.Combat:CreateModule({
   end,
   Tooltip = "When you're autoclicking it'll stop to select the best hits to gain a combo."
 })
-																																																																																																																																																							
+]]--
+																																							--[[
 																																																																																																																																																							]]--
---[[
+
 local AntiDeath = vape.Categories.Blatant:CreateModule({
     Name = "AntiDeath",
     Function = function(callback)
