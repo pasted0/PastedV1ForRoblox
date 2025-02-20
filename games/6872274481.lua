@@ -8432,7 +8432,7 @@ local nightmare = vape.Categories.Utility:CreateModule({
     end,
     Tooltip = "NightmateEmote cuz yes"
 })
-
+--[[
 local HitSelect = vape.Catagories.Combat:CreateModule({
   Name = "HitSelect",
   Function = function(callback)
@@ -8464,6 +8464,8 @@ local HitSelect = vape.Catagories.Combat:CreateModule({
   end,
   Tooltip = "When you're autoclicking it'll stop to select the best hits to gain a combo."
 })
+																																																																																																																																																							
+																																																																																																																																																							]]--
 --[[
 local AntiDeath = vape.Categories.Blatant:CreateModule({
     Name = "AntiDeath",
