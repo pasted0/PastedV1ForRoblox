@@ -633,25 +633,6 @@ end)
 entitylib.start()
 
 run(function()
-	local KnitInit, Knit
-	repeat
-		KnitInit, Knit = pcall(function()
-			return debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
-		end)
-		if KnitInit then break end
-		task.wait()
-	until KnitInit
-
-	if not debug.getupvalue(Knit.Start, 1) then
-		repeat task.wait() until debug.getupvalue(Knit.Start, 1)
-	end
-
-	local Flamework = require(replicatedStorage['rbxts_include']['node_modules']['@flamework'].core.out).Flamework
-	local InventoryUtil = require(replicatedStorage.TS.inventory['inventory-util']).InventoryUtil
-	local Client = require(replicatedStorage.TS.remotes).default.Client
-	local OldGet, OldBreak = Client.Get
-
-	
 bedwars = setmetatable({
 		AnimationType = require(replicatedStorage.TS.animation['animation-type']).AnimationType,
 		AnimationUtil = require(replicatedStorage['rbxts_include']['node_modules']['@easy-games']['game-core'].out['shared'].util['animation-util']).AnimationUtil,
@@ -715,7 +696,7 @@ bedwars = setmetatable({
 		end
 	})
 
-local remoteNames = {
+	local remoteNames = {
 		AckKnockback = debug.getproto(debug.getproto(Knit.Controllers.KnockbackController.KnitStart, 1), 1),
 		AfkStatus = debug.getproto(Knit.Controllers.AfkController.KnitStart, 1),
 		AttackEntity = Knit.Controllers.SwordController.sendServerRequest,
@@ -747,7 +728,34 @@ local remoteNames = {
 		SpawnRaven = Knit.Controllers.RavenController.spawnRaven,
 		SummonerClawAttack = Knit.Controllers.SummonerClawController.attack,
 		WarlockTarget = debug.getproto(Knit.Controllers.WarlockStaffController.KnitStart, 3)
-	}
+		}
+		local KnitInit, Knit
+	repeat
+		KnitInit, Knit = pcall(function()
+			return debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
+		end)
+		if KnitInit then break end
+		task.wait()
+	until KnitInit
+
+	if not debug.getupvalue(Knit.Start, 1) then
+		repeat task.wait() until debug.getupvalue(Knit.Start, 1)
+	end
+
+	local Flamework = require(replicatedStorage['rbxts_include']['node_modules']['@flamework'].core.out).Flamework
+	local InventoryUtil = require(replicatedStorage.TS.inventory['inventory-util']).InventoryUtil
+	local Client = require(replicatedStorage.TS.remotes).default.Client
+	local OldGet, OldBreak = Client.Get
+
+	
+bedwars = setmetatable({
+		AnimationType = require(replicatedStorage.TS.animation['animation-type']).AnimationType,
+		AnimationUtil = require(replicatedStorage['rbxts_include']['node_modules']['@easy-games']['game-core'].out['shared'].util['animation-util']).AnimationUtil,
+		AppController = require(replicatedStorage['rbxts_include']['node_modules']['@easy-games']['game-core'].out.client.controllers['app-controller']).AppController,
+		AbilityController = Flamework.resolveDependency('@easy-games/game-core:client/controllers/ability/ability-controller@AbilityController'),
+		BedwarsKitMeta = require(replicatedStorage.TS.games.bedwars.kit['bedwars-kit-meta']).BedwarsKitMeta,
+		BlockBreaker = Knit.Controllers.BlockBreakController.blockBreaker,
+
 
 	local function dumpRemote(tab)
 		local ind
