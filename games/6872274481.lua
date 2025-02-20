@@ -1,4 +1,4 @@
-
+print("went to bedwars")
 local run = function(func)
 	func()
 end
