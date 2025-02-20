@@ -8467,7 +8467,7 @@ local HitSelect = vape.Catagories.Combat:CreateModule({
 ]]--
 																																							--[[
 																																																																																																																																																							]]--
-
+--[[
 local AntiDeath = vape.Categories.Blatant:CreateModule({
     Name = "AntiDeath",
     Function = function(callback)
@@ -8491,7 +8491,7 @@ local AntiDeath = vape.Categories.Blatant:CreateModule({
         end
     end,
     Tooltip = "Saves you from dying cuz bad",
-    --[[
+    
     Trigger = AntiDeath:CreateSlider({
 		Name = 'Health Trigger',
 		Min = 5,
