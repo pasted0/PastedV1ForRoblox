@@ -8521,8 +8521,8 @@ local InfiniteJump = vape.Categories.Blatant:CreateModule({
 
 local tpDown = 0.3
 local tpUp = 0.2
-																																																																																																																																																								
-																																																																																																																																																								local speed2
+local speed1
+local speed2																																																																																																																																																								
 local AntiHit = vape.Categories.Blatant:CreateModule({
   Name = "AntiHit",
   Function = function(callback)
@@ -8545,7 +8545,7 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
   end,
   
   Tooltip = "Makes it so you cant get hit",
-  local speed1
+  
   speed1 = AntiHit:CreateSlider({
     Name = "Teleport Up Speed",
     Min = 0.01,
