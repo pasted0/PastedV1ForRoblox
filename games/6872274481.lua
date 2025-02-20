@@ -714,6 +714,7 @@ bedwars = setmetatable({
 			return rawget(self, ind)
 		end
 	})
+
 local remoteNames = {
 		AckKnockback = debug.getproto(debug.getproto(Knit.Controllers.KnockbackController.KnitStart, 1), 1),
 		AfkStatus = debug.getproto(Knit.Controllers.AfkController.KnitStart, 1),
@@ -726,7 +727,7 @@ local remoteNames = {
 		ConsumeSoul = Knit.Controllers.GrimReaperController.consumeSoul,
 		ConsumeTreeOrb = debug.getproto(Knit.Controllers.EldertreeController.createTreeOrbInteraction, 1),
 		DepositPinata = debug.getproto(debug.getproto(Knit.Controllers.PiggyBankController.KnitStart, 2), 5),
-		--DragonBreath = debug.getproto(Knit.Controllers.VoidDragonController.KnitStart, 4),
+		DragonBreath = debug.getproto(Knit.Controllers.VoidDragonController.KnitStart, 4),
 		DragonEndFly = debug.getproto(Knit.Controllers.VoidDragonController.flapWings, 1),
 		DragonFly = Knit.Controllers.VoidDragonController.flapWings,
 		DropItem = Knit.Controllers.ItemDropController.dropItemInHand,
@@ -747,7 +748,6 @@ local remoteNames = {
 		SummonerClawAttack = Knit.Controllers.SummonerClawController.attack,
 		WarlockTarget = debug.getproto(Knit.Controllers.WarlockStaffController.KnitStart, 3)
 	}
-
 
 	local function dumpRemote(tab)
 		local ind
