@@ -8381,7 +8381,8 @@ end)
 local RemoteSpam = vape.Categories.Blatant:CreateModule({
     Name = 'RemoteSpam',
     Function = function(callback)
-      while callback do
+      while true do
+        if not callback then return end
                   task.wait(0.1)
                   for _, v in game.Players:GetPlayers() do
                     if v ~= lplr and v.Character then
@@ -8465,8 +8466,6 @@ local HitSelect = vape.Catagories.Combat:CreateModule({
   Tooltip = "When you're autoclicking it'll stop to select the best hits to gain a combo."
 })
 ]]--
-																																							--[[
-																																																																																																																																																							]]--
 --[[
 local AntiDeath = vape.Categories.Blatant:CreateModule({
     Name = "AntiDeath",
@@ -8520,7 +8519,7 @@ local InfiniteJump = vape.Categories.Blatant:CreateModule({
 
 local tpDown = 0.3
 local tpUp = 0.2
-local AntiHit = vape.Catagories.Blatant:CreateModule({
+local AntiHit = vape.Categories.Blatant:CreateModule({
   Name = "AntiHit",
   Function = function(callback)
     while callback do
