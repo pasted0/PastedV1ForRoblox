@@ -1,4 +1,4 @@
-print("went to bedwars | Check To See If Delta actually looks at the thingy " .. math.random(100))
+print("went to bedwars | Check To See If Delta actually looks at the thingy" .. math.random(100))
 local run = function(func)
 	func()
 end
