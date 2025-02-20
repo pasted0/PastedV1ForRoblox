@@ -1,4 +1,4 @@
-print("went to bedwars | Check To See If Delta actually looks at the thingy" .. math.random(100))
+print("went to bedwars | Check To See If Delta actually looks at the thingy " .. math.random(100))
 local run = function(func)
 	func()
 end
@@ -29,6 +29,8 @@ local isnetworkowner = identifyexecutor and table.find({'AWP', 'Nihon'}, ({ident
 end
 local gameCamera = workspace.CurrentCamera
 local lplr = playersService.LocalPlayer
+local humanoid = lplr.Character:WaitForChild("Humanoid")
+local root = lplr.Character:WaitForChild("HumanoidRootPart")
 local assetfunction = getcustomasset
 
 local vape = shared.vape
