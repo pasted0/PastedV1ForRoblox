@@ -8529,10 +8529,10 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
               local vRoot = v.Character:FindFirstChild("HumanoidRootPart")
               if vRoot and (root.Position - vRoot.Position).Magnitude <= 12.5 then
                 task.wait(tpUp)
-                  root.CFrame = root.CFrame + Vector3.new(0, 90000, 0)
+                  root.CFrame = root.CFrame + Vector3.new(0, 150, 0)
                   root.Anchored = true
                   task.wait(tpDown)
-                  root.CFrame = root.CFrame - Vector3.new(0, 90000, 0)
+                  root.CFrame = root.CFrame - Vector3.new(0, 150, 0)
                   root.Anchored = false
               end
           end
@@ -8540,7 +8540,8 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
     end
   end,
   
-  Tooltip = "Makes it so you cant get hit",
+  Tooltip = "Makes it so you cant get hit"
+		--[[
   AntiHit:CreateSlider({
     Min = 0.01,
     Max = 1,
@@ -8556,7 +8557,8 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
     Function = function(val)
       tpDown = val
     end
-  })
+    })]]--
+		
 })
 
 
