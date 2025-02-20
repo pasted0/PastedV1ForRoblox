@@ -8543,7 +8543,9 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
   end,
   
   Tooltip = "Makes it so you cant get hit",
-  AntiHit:CreateSlider({
+  local speed1
+  speed1 = AntiHit:CreateSlider({
+    Name = "Teleport Up Speed",
     Min = 0.01,
     Max = 1,
     Defualt = 0.2,
@@ -8551,7 +8553,9 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
       tpUp = val
     end
   }),
-  AntiHit:CreateSlider({
+local speed2
+  speed2 = AntiHit:CreateSlider({
+    Name = "Teleport Down Speed",
     Min = 0.01,
     Max = 1,
     Default = 0.3,
