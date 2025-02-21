@@ -8381,28 +8381,38 @@ run(function()
 end)
 -->> CUSTOM MODULES <<--
 local RemoteSpam = vape.Categories.Blatant:CreateModule({
-    Name = 'RemoteSpam',
+    'RemoteSpam',
     Function = function(callback)
-      while true do
-        if not callback then return end
-                  task.wait(0.1)
-                  for _, v in game.Players:GetPlayers() do
-                    if v ~= lplr and v.Character then
-                      local vRoot = v.Character:FindFirstChild("HumanoidRootPart")
-                      if vRoot and (root.Position - vRoot.Position).Magnitude <= 12.5 then
-              local args = {
-                  [1] = {
-                    ["player"] = game:GetService("Players").LocalPlayer
-                  }
-                }game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.DragonBreath:FireServer(unpack(args))
-              local args = {
-                [1] = "PARTY_POPPER"
-              }
-              game:GetService("ReplicatedStorage"):FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events").useAbility:FireServer(unpack(args))
-                      end
+        while true do
+            if not callback then return end
+            task.wait(0.1)
+
+            for _, v in game.Players:GetPlayers() do
+                if v ~= lplr and v.Team ~= lplr.Team and v.Character then
+                    local vRoot = v.Character:FindFirstChild("HumanoidRootPart")
+
+                    if vRoot and (root.Position - vRoot.Position).Magnitude <= 12.5 then
+                        local args1 = {
+                            [1] = {
+                                ["targetPoint"] = vRoot.Position,
+                                ["player"] = game:GetService("Players").LocalPlayer
+                            }
+                        }
+
+                        game:GetService("ReplicatedStorage").rbxts_include.node_modules
+                            :FindFirstChild("@rbxts").net.out._NetManaged.DragonBreath:FireServer(unpack(args1))
+
+                        local args2 = {
+                            [1] = "PARTY_POPPER"
+                        }
+
+                        game:GetService("ReplicatedStorage")
+                            :FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events")
+                            .useAbility:FireServer(unpack(args2))
                     end
-                  end
-      end
+                end
+            end
+        end
     end,
     Tooltip = 'loop fires remotes'
 })
