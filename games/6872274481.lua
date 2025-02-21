@@ -8381,7 +8381,7 @@ run(function()
 end)
 -->> CUSTOM MODULES <<--
 local RemoteSpam = vape.Categories.Blatant:CreateModule({
-    'RemoteSpam',
+    Name = "RemoteSpam",
     Function = function(callback)
         while true do
             if not callback then return end
