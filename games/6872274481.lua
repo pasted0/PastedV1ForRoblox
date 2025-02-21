@@ -8526,7 +8526,7 @@ local tempCam = Instance.new("Part",workspace)
 tempCam.CFrame = root.CFrame - Vector3.new(0,150,0)
 tempCam.Transparency = 1
 local AntiHit = vape.Categories.Blatant:CreateModule({
-   "AntiHit",
+   Name = "AntiHit",
   Function = function(callback)
     while callback do
       task.wait()
