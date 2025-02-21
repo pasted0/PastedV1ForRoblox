@@ -8517,13 +8517,14 @@ local InfiniteJump = vape.Categories.Blatant:CreateModule({
     Tooltip = 'inf jump'
 })
 
-
-
 run(function()
-local tpDown = 0.02
-local tpUp = 0.01
-local speed1
-local speed2
+local tpDown = 0.03
+local tpUp = 0.02
+
+
+local tempCam = Instance.new("Part",workspace)
+tempCam.CFrame = root.CFrame - Vector3.new(0,150,0)
+tempCam.Transparency = 1
 local AntiHit = vape.Categories.Blatant:CreateModule({
    "AntiHit",
   Function = function(callback)
@@ -8536,9 +8537,11 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
                 task.wait(tpUp)
                   root.CFrame = root.CFrame + Vector3.new(0, 150, 0)
                   root.Anchored = true
+                  gameCamera.CameraSubject = tempCam
                   task.wait(tpDown)
                   root.CFrame = root.CFrame - Vector3.new(0, 150, 0)
                   root.Anchored = false
+                  gameCamera.CameraSubject = humanoid
               end
           end
       end
@@ -8546,24 +8549,5 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
   end,
   
   Tooltip = "Makes it so you cant get hit"
---[[																																																																																																																																																													
-  speed1 = AntiHit:CreateSlider({
-    Name = "Teleport Up Speed",
-    Min = 0.01,
-    Max = 1,
-    Defualt = 0.2,
-    Function = function(val)
-      tpUp = val
-    end
-  }),
-  speed2 = AntiHit:CreateSlider({
-    Name = "Teleport Down Speed",
-    Min = 0.01,
-    Max = 1,
-    Default = 0.3,
-    Function = function(val)
-      tpDown = val
-    end
-  })]]--
 })
 end)
