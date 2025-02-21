@@ -8517,6 +8517,7 @@ local InfiniteJump = vape.Categories.Blatant:CreateModule({
     Tooltip = 'inf jump'
 })
 
+--[[
 run(function()
 local tpDown = 0.03
 local tpUp = 0.02
@@ -8526,7 +8527,7 @@ local tempCam = Instance.new("Part",workspace)
 tempCam.CFrame = root.CFrame - Vector3.new(0,150,0)
 tempCam.Transparency = 1
 local AntiHit = vape.Categories.Blatant:CreateModule({
-   Name = "AntiHit",
+   "AntiHit",
   Function = function(callback)
     while callback do
       task.wait()
@@ -8551,3 +8552,4 @@ local AntiHit = vape.Categories.Blatant:CreateModule({
   Tooltip = "Makes it so you cant get hit"
 })
 end)
+]]--
