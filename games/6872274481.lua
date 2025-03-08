@@ -71,7 +71,6 @@ local bedwars, remotes, sides, oldinvrender = {}, {}, {}
 
 local function addBlur(parent)
 	local blur = Instance.new('ImageLabel')
-	blur.Name = 'Im Gonna Fucking Touch Luau Uf This Shit Doesnt work u nigger'
 	blur.Size = UDim2.new(1, 89, 1, 52)
 	blur.Position = UDim2.fromOffset(-48, -31)
 	blur.BackgroundTransparency = 1
