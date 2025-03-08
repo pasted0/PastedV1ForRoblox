@@ -68,7 +68,7 @@ local InfiniteFly
 local TrapDisabler
 local AntiFallPart
 local bedwars, remotes, sides, oldinvrender = {}, {}, {}
-
+--[[
 local function addBlur(parent)
 	local blur = Instance.new('ImageLabel')
 	blur.Size = UDim2.new(1, 89, 1, 52)
@@ -80,7 +80,7 @@ local function addBlur(parent)
 	blur.Parent = parent
 	return blur
 end
-
+]]--
 local function collection(tags, module, customadd, customremove)
 	tags = typeof(tags) ~= 'table' and {tags} or tags
 	local objs, connections = {}, {}
@@ -3344,8 +3344,8 @@ run(function()
 		billboard.AlwaysOnTop = true
 		billboard.ClipsDescendants = false
 		billboard.Adornee = v
-		local blur = addBlur(billboard)
-		blur.Visible = Background.Enabled
+		--local blur = addBlur(billboard)
+		--blur.Visible = Background.Enabled
 		local image = Instance.new('ImageLabel')
 		image.Size = UDim2.fromOffset(36, 36)
 		image.Position = UDim2.fromScale(0.5, 0.5)
@@ -3913,8 +3913,8 @@ run(function()
 		billboard.AlwaysOnTop = true
 		billboard.ClipsDescendants = false
 		billboard.Adornee = v
-		local blur = addBlur(billboard)
-		blur.Visible = Background.Enabled
+		--local blur = addBlur(billboard)
+		--blur.Visible = Background.Enabled
 		local frame = Instance.new('Frame')
 		frame.Size = UDim2.fromScale(1, 1)
 		frame.BackgroundColor3 = Color3.fromHSV(Color.Hue, Color.Sat, Color.Value)
@@ -6275,7 +6275,7 @@ run(function()
 		divider.BackgroundColor3 = color.Light(uipallet.Main, 0.04)
 		divider.BorderSizePixel = 0
 		divider.Parent = window
-		addBlur(window)
+		--addBlur(window)
 		local modal = Instance.new('TextButton')
 		modal.Text = ''
 		modal.BackgroundTransparency = 1
@@ -6967,8 +6967,8 @@ run(function()
 		billboard.AlwaysOnTop = true
 		billboard.ClipsDescendants = false
 		billboard.Adornee = v
-		local blur = addBlur(billboard)
-		blur.Visible = Background.Enabled
+		--local blur = addBlur(billboard)
+		--blur.Visible = Background.Enabled
 		local frame = Instance.new('Frame')
 		frame.Size = UDim2.fromScale(1, 1)
 		frame.BackgroundColor3 = Color3.fromHSV(Color.Hue, Color.Sat, Color.Value)
